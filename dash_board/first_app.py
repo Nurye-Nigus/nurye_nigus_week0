@@ -75,6 +75,6 @@ elif page == "My Personal File":
 
             # Display personal file content
             st.header("Personal File Content")
-            st.write("This is your personal file content. You have successfully logged in.")
+            st.write("This is my personal file content. You have successfully logged in.")
         else:
             st.error("Invalid username or password. Please try again.")

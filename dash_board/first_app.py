@@ -14,7 +14,7 @@ def login():
     # Login button
     if st.button("Login"):
         if username == correct_username and password == correct_password:
-            st.success("Login successful!")
+            st.success("this is nurye nigus first streamlit app")
             # You can redirect to another page or perform further actions after successful login
         else:
             st.error("Invalid username or password. Please try again.")

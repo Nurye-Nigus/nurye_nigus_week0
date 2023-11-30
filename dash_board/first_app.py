@@ -10,7 +10,7 @@ page = st.selectbox("Go to", PAGES)
 
 # Main content
 if page == "personal_experiance":
-    st.title("Nurye's experiance")
+    st.title("Nurye Nigus")
     
     st.header("Nurye's professional Summary")
     st.write("""
@@ -39,15 +39,15 @@ if page == "personal_experiance":
 
     st.header("Work Experience")
     st.write("""
-    - **Automation Engineer** – self-employed - Ethiopia - 2021-Present
+    - -Automation Engineer** – self-employed - Ethiopia - 2021-Present
       - Engaging with clients seeking custom automated solutions or troubleshooting existing machinery.
-    - **Sales and Service Engineer** - Abulkhase PLC – Ethiopia - 2022 – 2023 – part-time
+    - -Sales and Service Engineer** - Abulkhase PLC – Ethiopia - 2022 – 2023 – part-time
       - Secured deals, engaged in tender processes, and provided comprehensive service support for products.
     """)
 
     st.header("Education")
     st.write("""
-    - **Electro-Mechanical Engineering** – Addis Ababa Science and Technology University – Ethiopia - 2016-2021
+    - -Electro-Mechanical Engineering – Addis Ababa Science and Technology University – Ethiopia - 2016-2021
       - Explored machine learning, computer vision, programming languages (Python, C++), and frameworks (Flask).
       - Proficient in hardware programming, including PLC and microcontrollers like PIC, Arduino, and 8051.
     """)
@@ -64,11 +64,11 @@ elif page == "contact":
 elif page == "My Personal File":
     st.title("My Personal File")
 
-    # Login for My Personal File
+
     entered_username = st.text_input("Username:")
     entered_password = st.text_input("Password:", type="password")
 
-    # Check login credentials
+
     if st.button("Login"):
         if entered_username == correct_username and entered_password == correct_password:
             st.success("Login successful!")

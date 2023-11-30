@@ -5,12 +5,12 @@ correct_username = "nurye"
 correct_password = "6879"
 
 # Page navigation
-PAGES = ["Home", "About", "My Personal File"]
+PAGES = ["my_experiance", "Contact", "My Personal File"]
 page = st.selectbox("Go to", PAGES)
 
 # Main content
-if page == "Home":
-    st.title("Home Page")
+if page == "my_experiance":
+    st.title("Nurye Nigus experiance")
     
     st.header("Professional Summary")
     st.write("""
@@ -52,8 +52,8 @@ if page == "Home":
       - Proficient in hardware programming, including PLC and microcontrollers like PIC, Arduino, and 8051.
     """)
 
-elif page == "About":
-    st.title("About Page")
+elif page == "contact":
+    st.title("Nurye Nigus contacdt address")
 
     st.write("Contact:")
     st.write("- Email: nryngs2006@gmail.com")

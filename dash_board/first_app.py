@@ -5,7 +5,7 @@ correct_username = "nurye"
 correct_password = "6879"
 
 # Page navigation
-PAGES = ["Home", "About", "My Personal File"]
+PAGES = ["personal_experiance", "contact", "My Personal File"]
 page = st.selectbox("Go to", PAGES)
 
 # Main content

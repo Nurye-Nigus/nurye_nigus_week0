@@ -6,7 +6,7 @@ correct_password = "6879"
 
 # Page navigation
 PAGES = ["Home", "About", "My Personal File"]
-page = st.sidebar.selectbox("Go to", PAGES)
+page = st.selectbox("Go to", PAGES)
 
 # Main content
 if page == "Home":

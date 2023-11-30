@@ -1,66 +1,80 @@
 import streamlit as st
 
-def login():
-    st.title("Login to Nurye's Personal File")
+# Hardcoded username and password for My Personal File
+correct_username = "nurye"
+correct_password = "6879"
 
-    # Hardcoded username and password for Nurye's personal file
-    correct_username = "nurye"
-    correct_password = "6879"
+# Page navigation
+PAGES = ["Home", "About", "My Personal File"]
+page = st.sidebar.selectbox("Go to", PAGES)
 
-    # User input for username and password
-    username = st.text_input("Username:")
-    password = st.text_input("Password:", type="password")
-
-    # Login button
-    if st.button("Login"):
-        if username == correct_username and password == correct_password:
-            st.success("Login successful!")
-            return True
-        else:
-            st.error("Invalid username or password. Please try again.")
-    return False
-
-def nurye_personal_file():
-    st.title("Nurye's Personal File")
-
-    # Your biography content
-    st.header("Biography")
+# Main content
+if page == "Home":
+    st.title("Home Page")
+    
+    st.header("Professional Summary")
     st.write("""
-    I am Nurye, a versatile professional proficient in machine learning libraries, computer vision, Python, C++, and
+    I am a versatile professional proficient in machine learning libraries, computer vision, Python, C++, and
     frameworks like Flask. My expertise extends to databases (MongoDB, PostgreSQL, MySQL) and hardware
     integration like PLC, RASPBERRY PI, ARDUINO, with projects including a traffic light control system using
     computer vision. I aspire to excel as a machine learning engineer, integrating AI with hardware to address
     community challenges.
+    """)
 
-    **Skills:**
-    - Technical Skills
-      - Hardware programming using PLC, Raspberry Pi, Arduino, and PIC
-      - Proficiency in machine learning libraries, computer vision, Python, and C++
-      - Frameworks: Flask
-      - Databases: MongoDB, PostgreSQL, MySQL
+    st.header("Skills")
+    st.subheader("Technical Skills")
+    st.write("""
+    I specialize in hardware programming using PLC, Raspberry Pi, Arduino, and PIC, complemented by proficiency in
+    machine learning libraries, computer vision, Python, and C++. Additionally, I am well-versed in frameworks like
+    Flask and databases including MongoDB, PostgreSQL, and MySQL.
+    """)
+    st.subheader("Soft Skills")
+    st.write("""
+    Communication skill, Teamwork and collaboration, problem-solving skill, time management, creativity, and innovation
+    """)
+    st.subheader("Software Tools")
+    st.write("""
+    VSCODE, Anaconda, Scikit-learn, Keras, TensorFlow, PyTorch, Pandas, Matplotlib, Python, CV2
+    """)
 
-    - Soft Skills
-      - Communication skill, Teamwork and collaboration, problem-solving skill
-      - Time management, creativity, and innovation
-
-    - Software Tools
-      - VSCODE, Anaconda, Scikit-learn, Keras, TensorFlow, PyTorch, Pandas, Matplotlib, Python, CV2
-
-    **Work Experience:**
-    - Automation Engineer – self-employed - Ethiopia - 2021-Present
+    st.header("Work Experience")
+    st.write("""
+    - **Automation Engineer** – self-employed - Ethiopia - 2021-Present
       - Engaging with clients seeking custom automated solutions or troubleshooting existing machinery.
-    - Sales and Service Engineer - Abulkhase PLC – Ethiopia - 2022 – 2023 – part-time
+    - **Sales and Service Engineer** - Abulkhase PLC – Ethiopia - 2022 – 2023 – part-time
       - Secured deals, engaged in tender processes, and provided comprehensive service support for products.
+    """)
 
-    **Education:**
-    - Electro-Mechanical Engineering – Addis Ababa Science and Technology University – Ethiopia - 2016-2021
+    st.header("Education")
+    st.write("""
+    - **Electro-Mechanical Engineering** – Addis Ababa Science and Technology University – Ethiopia - 2016-2021
       - Explored machine learning, computer vision, programming languages (Python, C++), and frameworks (Flask).
       - Proficient in hardware programming, including PLC and microcontrollers like PIC, Arduino, and 8051.
     """)
 
-def main():
-    if login():
-        nurye_personal_file()
+elif page == "About":
+    st.title("About Page")
 
-if __name__ == "__main__":
-    main()
+    st.write("Contact:")
+    st.write("- Email: nryngs2006@gmail.com")
+    st.write("- Phone: +251929404324")
+    st.write("- GitHub: [https://github.com/Nurye-Nigus](https://github.com/Nurye-Nigus)")
+    st.write("- LinkedIn: [https://www.linkedin.com/in/nryngs/](https://www.linkedin.com/in/nryngs/)")
+
+elif page == "My Personal File":
+    st.title("My Personal File")
+
+    # Login for My Personal File
+    entered_username = st.text_input("Username:")
+    entered_password = st.text_input("Password:", type="password")
+
+    # Check login credentials
+    if st.button("Login"):
+        if entered_username == correct_username and entered_password == correct_password:
+            st.success("Login successful!")
+
+            # Display personal file content
+            st.header("Personal File Content")
+            st.write("This is your personal file content. You have successfully logged in.")
+        else:
+            st.error("Invalid username or password. Please try again.")
